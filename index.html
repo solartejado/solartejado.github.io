@@ -290,7 +290,7 @@
         var api = web.replace(/\s+/g, "").toLowerCase();
 
 
-        document.getElementById('dynamic-link').href = `https://caeserver.duckdns.org/ipa/${api}/`;
+        document.getElementById('dynamic-link').href = `https://caeserver.duckdns.org/${api}/`;
         document.querySelector('.container').style.background = `url('${web}.webp') no-repeat center center/cover`;
         document.getElementById("subtitulo").innerHTML = subtitulo;
         document.getElementById("web").innerHTML = web;
