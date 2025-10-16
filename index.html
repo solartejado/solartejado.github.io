@@ -1,331 +1,878 @@
-<script>
-    // window.web = "Electro Casa";
-    // window.subtitulo = "Impulsamos un futuro con energía renovable, movilidad eléctrica y un consumo eficiente para un planeta más sostenible.";
-    window.web = "Tejado Solar";
-    window.subtitulo = "Diseña instalaciones fotovoltaicas con precisión y lleva la energía renovable a cada rincón. Más sostenibilidad, más ahorro, más futuro.";
-
-</script>
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="web"></title>
+    <title>Tejado.Solar - Especialistas en Tejas Solares Integradas</title>
+    <!-- Material UI Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        :root {
+            --primary: #1a365d;
+            --secondary: #2d3748;
+            --accent: #2b6cb0;
+            --accent-light: #4299e1;
+            --gold: #d4af37;
+            --light: #f7fafc;
+            --dark: #1a202c;
+            --gray: #718096;
+            --success: #38a169;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        body,
-        html {
-            height: 100%;
-            font-family: Arial, sans-serif;
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--secondary);
+            background-color: var(--light);
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            color: var(--primary);
         }
 
         .container {
-            position: relative;
-            height: 100vh;
-            /* background: url('Electro.Casa.webp') no-repeat center center/cover; */
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
             display: flex;
-            flex-direction: column;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 24px;
+            color: var(--primary);
+        }
+
+        .logo i {
+            margin-right: 10px;
+            color: var(--accent);
+            font-size: 28px;
+        }
+
+        .logo span {
+            color: var(--gold);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 8px 0;
+            position: relative;
+        }
+
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--accent);
+        }
+
+        nav ul li a:hover:after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(26, 54, 93, 0.85), rgba(26, 54, 93, 0.9)), url('https://images.unsplash.com/photo-1621506289937-a8e4df240d0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 150px 0 120px;
             text-align: center;
         }
 
-        .container::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            /* Capa negra con 50% de opacidad */
-            z-index: 0;
-            /* Asegúrate de que el overlay esté detrás del contenido */
-        }
-
-        .container>* {
-            z-index: 1;
-            /* Asegura que el contenido (texto, botones, etc.) esté por encima del overlay */
-        }
-
-        .title {
-            font-size: 80px;
-            color: white;
-            font-weight: bold;
+        .hero h1 {
+            font-size: 48px;
             margin-bottom: 20px;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+            color: white;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
         }
 
         .btn {
-            padding: 15px 30px;
-            font-size: 20px;
-            color: white;
-            background-color: #ff5722;
+            display: inline-block;
+            padding: 16px 36px;
+            background: var(--gold);
+            color: var(--primary);
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             border: none;
             cursor: pointer;
-            border-radius: 5px;
-            text-decoration: none;
-            margin-bottom: 10px;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+            font-family: 'Inter', sans-serif;
         }
 
         .btn:hover {
-            background-color: #e64a19;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+            background: #e6c34e;
         }
 
-        .subtitle {
-            font-size: 20px;
+        .btn-secondary {
+            background: transparent;
             color: white;
-            margin-top: 10px;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+            border: 2px solid white;
+            margin-left: 15px;
         }
 
-        footer {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
+        .btn-secondary:hover {
+            background: white;
+            color: var(--primary);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 100px 0;
+            background-color: white;
+        }
+
+        .section-title {
             text-align: center;
-            padding: 10px;
-            background: rgba(0, 0, 0, 0.7);
-            color: white;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+            margin-bottom: 60px;
+            font-size: 36px;
+            position: relative;
         }
 
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 3px;
+            background: var(--gold);
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            text-align: center;
+            padding: 40px 30px;
+            border-top: 4px solid var(--accent);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-icon {
+            font-size: 48px;
+            margin-bottom: 25px;
+            color: var(--accent);
+        }
+
+        .feature-card h3 {
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+
+        /* Products Section */
+        .products {
+            padding: 100px 0;
+            background-color: var(--light);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-image {
+            height: 220px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .product-content {
+            padding: 25px;
+        }
+
+        .product-content h3 {
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .product-content p {
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+
+        /* Benefits Section */
+        .benefits {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            color: white;
+        }
+
+        .benefits h2 {
+            color: white;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .benefit-item {
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .benefit-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+            color: var(--gold);
+        }
+
+        .benefit-item h3 {
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        /* Process Section */
+        .process {
+            padding: 100px 0;
+            background-color: white;
+        }
+
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 60px;
+            position: relative;
+        }
+
+        .process-steps:before {
+            content: '';
+            position: absolute;
+            top: 40px;
             left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
+            right: 0;
+            height: 2px;
+            background: var(--accent-light);
+            z-index: 1;
+        }
+
+        .process-step {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            flex: 1;
+            padding: 0 15px;
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: var(--accent);
+            color: white;
+            border-radius: 50%;
+            display: flex;
             align-items: center;
             justify-content: center;
-            z-index: 9999;
-            /* Se añadió un valor más alto para asegurar que el modal se superponga */
+            font-size: 24px;
+            font-weight: bold;
+            margin: 0 auto 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
 
-        .modal-content {
+        .process-step h3 {
+            margin-bottom: 15px;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 100px 0;
+            background-color: var(--light);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .contact-icon {
+            font-size: 24px;
+            margin-right: 15px;
+            color: var(--accent);
+            margin-top: 5px;
+        }
+
+        .contact-form {
             background: white;
-            padding: 20px;
-            border-radius: 5px;
-            width: 80%;
-            max-width: 500px;
-            max-height: 80vh;
-            overflow-y: auto;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
         }
 
+        .form-group {
+            margin-bottom: 25px;
+        }
 
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--dark);
+            font-weight: 500;
+        }
 
-        a {
+        .form-control {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid #e2e8f0;
+            border-radius: 4px;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.3s ease;
+            font-size: 16px;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.15);
+        }
+
+        .btn-submit {
+            background: var(--accent);
             color: white;
-            /* Color blanco */
+            border: none;
+            padding: 16px 30px;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            font-size: 16px;
+        }
+
+        .btn-submit:hover {
+            background: var(--accent-light);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: white;
+            padding: 70px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-column h3 {
+            margin-bottom: 25px;
+            color: white;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #cbd5e0;
             text-decoration: none;
-            /* Quitar el subrayado */
+            transition: all 0.3s ease;
         }
 
-        a:hover {
-            text-decoration: underline;
-            /* Agregar subrayado cuando se pasa el ratón */
+        .footer-links a:hover {
+            color: var(--gold);
+            padding-left: 5px;
         }
 
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
 
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--gold);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 14px;
+            color: #a0aec0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav ul {
+                margin-top: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            nav ul li {
+                margin: 0 10px 10px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .process-steps {
+                flex-direction: column;
+                gap: 40px;
+            }
+
+            .process-steps:before {
+                display: none;
+            }
+
+            .btn-secondary {
+                margin-left: 0;
+                margin-top: 15px;
+                display: block;
+            }
+        }
     </style>
 </head>
 
 <body>
-    <div class="container">
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="material-icons">roofing</i>
+                    <span>Tejado</span>.Solar
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#productos">Productos</a></li>
+                        <li><a href="#beneficios">Beneficios</a></li>
+                        <li><a href="#proceso">Proceso</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
 
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="container">
+            <h1>La Revolución de las <span>Tejas Solares</span></h1>
+            <p>Integra la energía solar en tu hogar sin comprometer la estética. Nuestras tejas solares ofrecen máxima
+                eficiencia con un diseño discreto y elegante.</p>
+            <a href="#contacto" class="btn">Solicitar Presupuesto</a>
+            <a href="#productos" class="btn btn-secondary">Ver Productos</a>
+        </div>
+    </section>
 
-        <div class="title"><span id="web2"></span></div>
-        <a id="dynamic-link" href="#" class="btn">Entrar</a>
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Tecnología Avanzada en Cada Teja</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="material-icons feature-icon">architecture</i>
+                    <h3>Diseño Integrado</h3>
+                    <p>Reemplaza las tejas convencionales sin alterar la estética de tu tejado.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="material-icons feature-icon">bolt</i>
+                    <h3>Alta Eficiencia</h3>
+                    <p>Genera hasta 350W por m² con nuestra tecnología de última generación.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="material-icons feature-icon">security</i>
+                    <h3>Durabilidad Garantizada</h3>
+                    <p>Resistentes a condiciones climáticas extremas con 25 años de garantía.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Products Section -->
+    <section class="products" id="productos">
+        <div class="container">
+            <h2 class="section-title">Nuestras Tejas Solares</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image"
+                        style="background-image: url('https://images.unsplash.com/photo-1592210454359-904b3ef8e8a6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80')">
+                    </div>
+                    <div class="product-content">
+                        <h3>Teja Solar Clásica</h3>
+                        <p>Ideal para viviendas tradicionales, se integra perfectamente con tejas de barro o pizarra.
+                        </p>
+                        <a href="#contacto" class="btn">Más Información</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image"
+                        style="background-image: url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80')">
+                    </div>
+                    <div class="product-content">
+                        <h3>Teja Solar Planas</h3>
+                        <p>Perfecta para arquitectura contemporánea con líneas limpias y diseño minimalista.</p>
+                        <a href="#contacto" class="btn">Más Información</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image"
+                        style="background-image: url('https://images.unsplash.com/photo-1603712725038-e9334ae8f39f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80')">
+                    </div>
+                    <div class="product-content">
+                        <h3>Sistema Completo</h3>
+                        <p>Incluye tejas solares, inversores y sistema de monitorización para máxima eficiencia.</p>
+                        <a href="#contacto" class="btn">Más Información</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <div class="subtitle"><span id="subtitulo"></div>
-    </div>
+    <!-- Benefits Section -->
+    <section class="benefits" id="beneficios">
+        <div class="container">
+            <h2 class="section-title">Ventajas de las Tejas Solares</h2>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <i class="material-icons benefit-icon">savings</i>
+                    <h3>Ahorro Energético</h3>
+                    <p>Reduce hasta un 70% tu factura eléctrica con energía gratuita del sol.</p>
+                </div>
+                <div class="benefit-item">
+                    <i class="material-icons benefit-icon">home</i>
+                    <h3>Valoriza tu Propiedad</h3>
+                    <p>Aumenta el valor de tu vivienda con una solución energética moderna.</p>
+                </div>
+                <div class="benefit-item">
+                    <i class="material-icons benefit-icon">eco</i>
+                    <h3>Sostenibilidad</h3>
+                    <p>Contribuye al medio ambiente reduciendo tu huella de carbono.</p>
+                </div>
+                <div class="benefit-item">
+                    <i class="material-icons benefit-icon">engineering</i>
+                    <h3>Instalación Profesional</h3>
+                    <p>Nuestro equipo certificado garantiza una instalación perfecta.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process" id="proceso">
+        <div class="container">
+            <h2 class="section-title">Nuestro Proceso</h2>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Evaluación</h3>
+                    <p>Analizamos tu tejado y necesidades energéticas para diseñar la solución perfecta.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Diseño</h3>
+                    <p>Creamos un proyecto personalizado que optimiza la producción de energía.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Instalación</h3>
+                    <p>Nuestro equipo instala las tejas solares con precisión y cuidado.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>Activación</h3>
+                    <p>Conectamos el sistema y te enseñamos a monitorizar tu producción.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contacto">
+        <div class="container">
+            <h2 class="section-title">Solicita tu Estudio Gratuito</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>¿Listo para transformar tu tejado?</h3>
+                    <div class="contact-item">
+                        <i class="material-icons contact-icon">phone</i>
+                        <div>
+                            <h4>Teléfono</h4>
+                            <p>+34 911 234 567</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="material-icons contact-icon">email</i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>info@tejado.solar</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="material-icons contact-icon">schedule</i>
+                        <div>
+                            <h4>Horario</h4>
+                            <p>Lun-Vie: 9:00 - 18:00</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="material-icons contact-icon">location_on</i>
+                        <div>
+                            <h4>Zona de Actuación</h4>
+                            <p>Comunidad de Madrid y provincias limítrofes</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form action="https://formsubmit.co/kgnete@gmail.com" method="POST">
+                        <input type="hidden" name="_subject" value="Nueva solicitud de estudio solar - SolarFlor">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="table">
+
+                        <div class="form-group">
+                            <label for="name">Nombre completo</label>
+                            <input type="text" id="name" name="name" class="form-control" placeholder="Tu nombre"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" class="form-control" placeholder="Tu email"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Teléfono</label>
+                            <input type="tel" id="phone" name="phone" class="form-control" placeholder="Tu teléfono">
+                        </div>
+                        <div class="form-group">
+                            <label for="property-type">Tipo de propiedad</label>
+                            <select id="property-type" name="property-type" class="form-control" required>
+                                <option value="" disabled selected>Selecciona una opción</option>
+                                <option value="casa">Casa Unifamiliar</option>
+                                <option value="adosado">Adosado</option>
+                                <option value="chalet">Chalet</option>
+                                <option value="comercial">Local Comercial</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensaje</label>
+                            <textarea id="message" name="message" class="form-control" rows="4"
+                                placeholder="Cuéntanos sobre tu proyecto" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">Solicitar Estudio Gratuito</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2025 <span id="web1"></span>. Todos los derechos reservados.  |   C/ Moby Dick,30.29004 Málaga.  |<a
-                href="tel:+34951733491">+34 951 733 491</a>
-            |   <a href="mailto:info@ibercae.com">info@ibercae.com</a>
-        </p>
-        <p>
-            <a href="#" onclick="openModalPolitica(event)" style="color: #ff5722; text-decoration: underline;">Términos
-                de uso y privacidad</a>
-        </p>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Tejado.Solar</h3>
+                    <p>Especialistas en la instalación de tejas solares integradas para viviendas y negocios.
+                        Transformamos tu tejado en una fuente de energía limpia y eficiente.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul class="footer-links">
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#productos">Productos</a></li>
+                        <li><a href="#beneficios">Beneficios</a></li>
+                        <li><a href="#proceso">Nuestro Proceso</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Servicios</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Instalación Residencial</a></li>
+                        <li><a href="#">Instalación Comercial</a></li>
+                        <li><a href="#">Mantenimiento</a></li>
+                        <li><a href="#">Asesoría Energética</a></li>
+                        <li><a href="#">Financiación</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Política de Privacidad</a></li>
+                        <li><a href="#">Términos y Condiciones</a></li>
+                        <li><a href="#">Aviso Legal</a></li>
+                        <li><a href="#">Cookies</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Tejado.Solar. Todos los derechos reservados.</p>
+            </div>
+        </div>
     </footer>
 
-
-
-    <!-- Modal de Política de Privacidad -->
-    <div id="modalPolitica" class="modal">
-        <div class="modal-content">
-            <h1>Términos de Uso</h1>
-
-            <p><strong>1. Aceptación de los Términos</strong><br>
-                Al acceder y utilizar este sitio web (en adelante "el Sitio"), el usuario acepta estar sujeto a los
-                siguientes Términos de Uso. Si no está de acuerdo con alguno de estos términos, le pedimos que se
-                abstenga de utilizar el Sitio.</p>
-
-            <p><strong>2. Uso del Sitio</strong><br>
-                El usuario se compromete a utilizar el Sitio conforme a la legislación aplicable, de manera responsable
-                y respetuosa con los derechos de propiedad intelectual e industrial de la empresa y de terceros.</p>
-
-            <p><strong>3. Propiedad Intelectual</strong><br>
-                Todo el contenido del Sitio, incluidos textos, imágenes, gráficos, logos, iconos, software y demás
-                materiales, está protegido por derechos de propiedad intelectual e industrial. Queda prohibida su
-                reproducción, distribución, modificación o explotación sin autorización expresa.</p>
-
-            <p><strong>4. Responsabilidad</strong><br>
-                El Sitio no será responsable de ningún daño directo, indirecto o incidental que surja del uso o
-                imposibilidad de uso de este, incluyendo fallos técnicos, virus, pérdida de datos o ingresos.</p>
-
-            <p><strong>5. Enlaces a Terceros</strong><br>
-                El Sitio puede contener enlaces a sitios web de terceros. Estos enlaces se proporcionan para
-                conveniencia del usuario, pero no implican ningún tipo de responsabilidad sobre el contenido o las
-                políticas de privacidad de dichos sitios.</p>
-
-            <p><strong>6. Modificaciones de los Términos</strong><br>
-                Nos reservamos el derecho de modificar estos Términos de Uso en cualquier momento. Cualquier cambio será
-                publicado en esta página, y la continuación del uso del Sitio por parte del usuario constituye la
-                aceptación de dichos cambios.</p>
-
-            <p><strong>7. Ley Aplicable y Jurisdicción</strong><br>
-                Estos Términos se rigen por las leyes de España. Cualquier disputa relacionada con el uso del Sitio será
-                resuelta por los tribunales competentes de Málaga.</p>
-
-            <hr>
-
-            <h1>Política de Privacidad</h1>
-
-            <p><strong>1. Introducción</strong><br>
-                La protección de su privacidad es importante para nosotros. Nos comprometemos a proteger la información
-                personal que nos proporciona. Esta Política de Privacidad explica cómo recopilamos, usamos y protegemos
-                sus datos.</p>
-
-            <p><strong>2. Información que Recopilamos</strong><br>
-                Recopilamos información personal, como nombre, dirección de correo electrónico, dirección IP y datos de
-                navegación, cuando el usuario interactúa con el Sitio.</p>
-
-            <p><strong>3. Uso de la Información</strong><br>
-                La información recopilada se utiliza para mejorar nuestros servicios, personalizar la experiencia del
-                usuario, y enviarle información relevante sobre nuestro Sitio o productos.</p>
-
-            <p><strong>4. Protección de la Información</strong><br>
-                Implementamos medidas de seguridad para proteger la información personal contra accesos no autorizados,
-                alteración, divulgación o destrucción.</p>
-
-            <p><strong>5. Compartir la Información</strong><br>
-                No compartimos su información personal con terceros sin su consentimiento, excepto en los casos en que
-                sea necesario para cumplir con la ley o con un requerimiento legal.</p>
-
-            <p><strong>6. Modificaciones de la Política de Privacidad</strong><br>
-                Nos reservamos el derecho de modificar esta Política de Privacidad en cualquier momento. Cualquier
-                cambio será publicado en esta página.</p>
-
-            <p><strong>7. Contacto</strong><br>
-                Si tiene alguna pregunta o inquietud sobre esta Política de Privacidad, puede ponerse en contacto con
-                nosotros a través de [correo electrónico de contacto].</p>
-            <button onclick="closeModalPolitica()"
-                style="margin-top:10px; padding:10px 20px; background:#ff5722; color:white; border:none; border-radius:5px;">Cerrar</button>
-        </div>
-    </div>
-
-    <!-- Modal de Cookies -->
-    <div id="modalCookies" class="modal">
-        <div class="modal-content">
-            <h2>Política de Cookies</h2>
-            <p>Este sitio web usa cookies para mejorar su experiencia.</p>
-            <button onclick="acceptCookies()"
-                style="margin-top:10px; padding:10px 20px; background:#ff5722; color:white; border:none; border-radius:5px;">Aceptar</button>
-        </div>
-    </div>
-
     <script>
-        // Verifica si el usuario ya ha aceptado las cookies
-        window.onload = function () {
-            if (!localStorage.getItem('cookiesAccepted')) {
-                // Si no se ha aceptado, abre el modal de cookies
-                document.getElementById('modalCookies').style.display = 'flex';
-            } else {
-                // Si ya se ha aceptado, no se muestra el modal de cookies
-                document.getElementById('modalCookies').style.display = 'none';
-            }
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
 
-            // Generar favicon
-        };
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
 
-        // Guarda la aceptación de las cookies en localStorage
-        function acceptCookies() {
-            localStorage.setItem('cookiesAccepted', 'true');
-            closeModalCookies();
-        }
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            });
+        });
 
-        // Cierra el modal de cookies
-        function closeModalCookies() {
-            document.getElementById('modalCookies').style.display = 'none';
-        }
-
-        // Abre el modal de Política de Privacidad cuando se hace clic en el enlace
-        function openModalPolitica(event) {
-            event.preventDefault();
-            document.getElementById('modalPolitica').style.display = 'flex';
-        }
-
-        // Cierra el modal de Política de Privacidad
-        function closeModalPolitica() {
-            document.getElementById('modalPolitica').style.display = 'none';
-        }
-    </script>
-
-
-    <script>
-
-        var initials = web.match(/[A-Z]/g)?.join("").slice(0, 2) || "A";
-        var api = web.replace(/\s+/g, "").toLowerCase();
-
-
-        document.getElementById('dynamic-link').href = `https://caeserver.duckdns.org/${api}/`;
-        document.querySelector('.container').style.background = `url('${web}.webp') no-repeat center center/cover`;
-        document.getElementById("subtitulo").innerHTML = subtitulo;
-        document.getElementById("web").innerHTML = web;
-        document.getElementById("web1").innerHTML = web;
-        document.getElementById("web2").innerHTML = web;
-        // document.getElementById("web3").innerHTML = web;
-
-        generateFavicon(initials);
-
-        // Función para generar el favicon
-        function generateFavicon(initials) {
-            var canvas = document.createElement('canvas');
-            var context = canvas.getContext('2d');
-
-            // Usar las iniciales de la variable 'web'
-            var text = initials;  // "EC"
-
-            // Configuración del tamaño del canvas y del texto
-            canvas.width = 64;
-            canvas.height = 64;
-            context.font = "55px sans-serif";  // Tamaño del texto
-            context.textAlign = "center";
-            context.textBaseline = "middle";
-            context.fillStyle = "#ff5722";  // Color del texto
-            context.fillText(text, canvas.width / 2, canvas.height / 2);
-
-            // Crear un enlace <link> para usarlo como favicon
-            var link = document.createElement('link');
-            link.rel = 'icon';
-            link.href = canvas.toDataURL('image/png'); // Convertir el canvas a una imagen PNG
-            document.head.appendChild(link);
-        }
-
-      </script>
-
+        // Form submission
+        document.querySelector('.contact-form form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert('¡Gracias por tu solicitud! Nos pondremos en contacto contigo en un máximo de 24 horas para programar tu estudio gratuito.');
+            this.reset();
+        });
     </script>
 </body>
 
