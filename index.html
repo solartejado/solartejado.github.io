@@ -1,11 +1,75 @@
-
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tejado.Solar - Especialistas en Tejados Solares Integradas</title>
+    <title>Tejado.Solar - Especialistas en Tejados Solares Integrados, Energía Fotovoltaica y Carga para Coches Eléctricos</title>
+    <meta name="description" content="Instalación de tejados solares integrados, sistemas fotovoltaicos completos, cargadores para coches eléctricos y baterías de almacenamiento. Energía renovable para tu hogar en Madrid y Costa del Sol.">
+    <meta name="keywords" content="tejado solar, techo solar, energía solar, fotovoltaica, placas solares, cargador coche eléctrico, baterías solares, energía renovable, autoconsumo, ahorro energético, paneles solares, instalación solar, Madrid, Málaga, Costa del Sol">
+    <meta name="author" content="Tejado.Solar">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Tejado.Solar - Tejados Solares Integrados y Energía Renovable">
+    <meta property="og:description" content="Especialistas en tejados solares integrados, fotovoltaica y carga para coches eléctricos">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.tejado.solar">
+    
+    <!-- Schema.org markup for Google -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "HomeAndConstructionBusiness",
+        "name": "Tejado.Solar",
+        "description": "Especialistas en instalación de tejados solares integrados, sistemas fotovoltaicos y cargadores para coches eléctricos",
+        "url": "https://www.tejado.solar",
+        "telephone": "+34-951-73-34-91",
+        "email": "info@tejado.solar",
+        "address": {
+            "@type": "PostalAddress",
+            "addressRegion": "Madrid y Costa del Sol",
+            "addressCountry": "ES"
+        },
+        "areaServed": ["Madrid", "Málaga", "Costa del Sol"],
+        "serviceType": ["Instalación energía solar", "Tejados solares", "Cargadores coches eléctricos", "Baterías almacenamiento"],
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Servicios de Energía Renovable",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Tejados Solares Integrados"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Sistemas Fotovoltaicos Completos"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Cargadores para Coches Eléctricos"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Baterías de Almacenamiento Solar"
+                    }
+                }
+            ]
+        }
+    }
+    </script>
+
     <!-- Material UI Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Google Fonts -->
@@ -133,7 +197,8 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(26, 54, 93, 0.85), rgba(26, 54, 93, 0.7)), url('i1.png');
+            background: linear-gradient(rgba(26, 54, 93, 0.85), rgba(26, 54, 93, 0.5)), 
+            url('i1.png');
             background-size: cover;
             background-position: center;
             color: white;
@@ -866,6 +931,58 @@
             margin-bottom: 20px;
         }
 
+        /* NEW: SEO Rich Content */
+        .seo-content {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .seo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .seo-card {
+            background: var(--light);
+            padding: 30px;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent);
+        }
+
+        .seo-card h3 {
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .seo-keywords {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .seo-keywords h3 {
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .keyword-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .keyword-tag {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .header-content {
@@ -932,6 +1049,11 @@
                 align-items: flex-start;
                 gap: 10px;
             }
+
+            .keyword-list {
+                flex-direction: column;
+                align-items: center;
+            }
         }
     </style>
 </head>
@@ -961,33 +1083,32 @@
     <!-- Hero Section -->
     <section class="hero" id="inicio">
         <div class="container">
-            <h1>La Revolución de los <span>Tejados Solares</span></h1>
-            <p>Integra la energía solar en tu hogar sin comprometer la estética. Nuestros Tejados solares ofrecen máxima
-                eficiencia con un diseño discreto y elegante.</p>
+            <h1>La Revolución del <span>Tejado Solar</span> Integrado  sin comprometer la estética.</h1>
+            <p>Transforma tu tejado en una fuente de energía renovable con nuestros sistemas de tejado solar integrado, fotovoltaica, cargadores para coches eléctricos y baterías de almacenamiento.</p>
             <a href="#contacto" class="btn">Solicitar Presupuesto</a>
-            <a href="#productos" class="btn btn-secondary">Ver Productos</a>
+            <a href="#productos" class="btn btn-secondary">Ver Sistemas</a>
         </div>
     </section>
 
     <!-- Features Section -->
     <section class="features">
         <div class="container">
-            <h2 class="section-title">Tecnología Avanzada en Cada Tejado</h2>
+            <h2 class="section-title">Tecnología Avanzada en Cada Tejado Solar</h2>
             <div class="features-grid">
                 <div class="feature-card">
                     <i class="material-icons feature-icon">architecture</i>
-                    <h3>Diseño Integrado</h3>
-                    <p>Reemplaza los Tejados convencionales sin alterar la estética de tu tejado.</p>
+                    <h3>Diseño Integrado Total</h3>
+                    <p>Tu tejado se convierte en una central eléctrica sin alterar la estética de tu vivienda. Sistema de tejado solar completamente integrado.</p>
                 </div>
                 <div class="feature-card">
                     <i class="material-icons feature-icon">bolt</i>
-                    <h3>Alta Eficiencia</h3>
-                    <p>Genera hasta 220W por m² con nuestra tecnología de última generación.</p>
+                    <h3>Alta Eficiencia Energética</h3>
+                    <p>Genera hasta 350W por m² con tecnología fotovoltaica de última generación para máximo autoconsumo.</p>
                 </div>
                 <div class="feature-card">
                     <i class="material-icons feature-icon">security</i>
                     <h3>Durabilidad Garantizada</h3>
-                    <p>Resistentes a condiciones climáticas extremas con 25 años de garantía.</p>
+                    <p>Resistentes a condiciones climáticas extremas con 25 años de garantía en todos nuestros sistemas de tejado solar.</p>
                 </div>
             </div>
         </div>
@@ -996,16 +1117,16 @@
     <!-- Products Section -->
     <section class="products" id="productos">
         <div class="container">
-            <h2 class="section-title">Nuestros Tejados Solares</h2>
+            <h2 class="section-title">Nuestros Sistemas de Tejado Solar</h2>
             <div class="products-grid">
                 <div class="product-card">
                     <div class="product-image"
                         style="background-image: url('i1.png')">
                     </div>
                     <div class="product-content">
-                        <h3>Panel Solar Full Black </h3>
-                        <p>Ideal para viviendas tradicionales, se integra perfectamente con Tejados de barro o pizarra. 
-                            Incluye  inversores, baterias, cargador VE y sistema de monitorización para máxima eficiencia
+                        <h3>Tejado Solar Clásico</h3>
+                        <p>
+Perfecta para arquitectura contemporánea con líneas limpias y diseño minimalista. Incluye inversores, baterias, cargador VE y sistema de monitorización para máxima eficiencia
                         </p>
                         <a href="#contacto" class="btn">Más Información</a>
                     </div>
@@ -1015,10 +1136,10 @@
                         style="background-image: url('i3.png')">
                     </div>
                     <div class="product-content">
-                        <h3>Teja Solar Planas</h3>
-                        <p>Perfecta para arquitectura contemporánea con líneas limpias y diseño minimalista.
-                            Incluye  inversores, baterias, cargador VE y sistema de monitorización para máxima eficiencia
-                            </p>
+                        <h3>Tejado Solar Contemporáneo</h3>
+                        <p>
+                            Ideal para viviendas tradicionales, se integra perfectamente con Tejados de barro o pizarra. Incluye inversores, baterias, cargador VE y sistema de monitorización para máxima eficiencia.
+                        </p>
                         <a href="#contacto" class="btn">Más Información</a>
                     </div>
                 </div>
@@ -1029,11 +1150,48 @@
                     <div class="product-content">
                         <h3>Vallado solar</h3>
                         <p>
-                            Niestra energia no invasiva.
-                            Incluye  inversores, baterias, cargador VE y sistema de monitorización para máxima eficiencia
-                            </p>
+Oro sistema de energia no invasiva. Incluye inversores, baterias, cargador VE y sistema de monitorización para máxima eficiencia                         </p>
                         <a href="#contacto" class="btn">Más Información</a>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW: SEO Rich Content Section -->
+    <section class="seo-content">
+        <div class="container">
+            <h2 class="section-title">Energía Renovable Integral para tu Hogar</h2>
+            <div class="seo-grid">
+                <div class="seo-card">
+                    <h3>Tejado Solar Fotovoltaico</h3>
+                    <p>Nuestros sistemas de tejado solar transforman la energía del sol en electricidad para tu hogar. Con tecnología de última generación, maximizamos la producción energética mientras mantenemos la estética de tu vivienda.</p>
+                </div>
+                <div class="seo-card">
+                    <h3>Cargadores para Coches Eléctricos</h3>
+                    <p>Instalamos puntos de carga para vehículos eléctricos alimentados directamente por tu tejado solar. Carga tu coche con energía 100% renovable y ahorra en combustible.</p>
+                </div>
+                <div class="seo-card">
+                    <h3>Baterías de Almacenamiento</h3>
+                    <p>Almacena el exceso de energía producida por tu tejado solar para usarla durante la noche o días nublados. Maximiza tu autoconsumo y reduce tu dependencia de la red eléctrica.</p>
+                </div>
+            </div>
+            
+            <div class="seo-keywords">
+                <h3>Especialistas en Energías Renovables</h3>
+                <div class="keyword-list">
+                    <span class="keyword-tag">tejado solar integrado</span>
+                    <span class="keyword-tag">energía fotovoltaica</span>
+                    <span class="keyword-tag">cargador coche eléctrico</span>
+                    <span class="keyword-tag">baterías solares</span>
+                    <span class="keyword-tag">autoconsumo</span>
+                    <span class="keyword-tag">paneles solares</span>
+                    <span class="keyword-tag">energía renovable</span>
+                    <span class="keyword-tag">ahorro energético</span>
+                    <span class="keyword-tag">instalación solar</span>
+                    <span class="keyword-tag">Madrid</span>
+                    <span class="keyword-tag">Málaga</span>
+                    <span class="keyword-tag">Costa del Sol</span>
                 </div>
             </div>
         </div>
@@ -1044,7 +1202,7 @@
         <div class="container">
             <div class="brochure-content">
                 <h2 class="section-title">Descarga Nuestro Folleto Informativo</h2>
-                <p>Obtén información detallada sobre Nuestros Tejados solares, especificaciones técnicas, casos de éxito y opciones de financiación.</p>
+                <p>Obtén información detallada sobre nuestros sistemas de tejado solar, especificaciones técnicas, casos de éxito y opciones de financiación.</p>
                 <button id="open-brochure-modal" class="btn">Descargar Folleto Gratuito</button>
             </div>
         </div>
@@ -1053,27 +1211,27 @@
     <!-- Benefits Section -->
     <section class="benefits" id="beneficios">
         <div class="container">
-            <h2 class="section-title">Ventajas de los Tejados Solares</h2>
+            <h2 class="section-title">Ventajas del Tejado Solar</h2>
             <div class="benefits-grid">
                 <div class="benefit-item">
                     <i class="material-icons benefit-icon">savings</i>
                     <h3>Ahorro Energético</h3>
-                    <p>Reduce hasta un 70% tu factura eléctrica con energía gratuita del sol.</p>
+                    <p>Reduce hasta un 70% tu factura eléctrica con energía gratuita del sol y carga tu coche eléctrico gratis.</p>
                 </div>
                 <div class="benefit-item">
                     <i class="material-icons benefit-icon">home</i>
                     <h3>Valoriza tu Propiedad</h3>
-                    <p>Aumenta el valor de tu vivienda con una solución energética moderna.</p>
+                    <p>Aumenta el valor de tu vivienda con una solución energética moderna y sostenible.</p>
                 </div>
                 <div class="benefit-item">
                     <i class="material-icons benefit-icon">eco</i>
-                    <h3>Sostenibilidad</h3>
-                    <p>Contribuye al medio ambiente reduciendo tu huella de carbono.</p>
+                    <h3>Sostenibilidad Total</h3>
+                    <p>Contribuye al medio ambiente reduciendo tu huella de carbono con energía 100% renovable.</p>
                 </div>
                 <div class="benefit-item">
                     <i class="material-icons benefit-icon">engineering</i>
                     <h3>Instalación Profesional</h3>
-                    <p>Nuestro equipo certificado garantiza una instalación perfecta.</p>
+                    <p>Nuestro equipo certificado garantiza una instalación perfecta de tu sistema de tejado solar.</p>
                 </div>
             </div>
         </div>
@@ -1086,23 +1244,23 @@
             <div class="process-steps">
                 <div class="process-step">
                     <div class="step-number">1</div>
-                    <h3>Evaluación</h3>
-                    <p>Analizamos tu tejado y necesidades energéticas para diseñar la solución perfecta.</p>
+                    <h3>Evaluación Energética</h3>
+                    <p>Analizamos tu consumo, tejado y necesidades para diseñar la solución de energía renovable perfecta.</p>
                 </div>
                 <div class="process-step">
                     <div class="step-number">2</div>
-                    <h3>Diseño</h3>
-                    <p>Creamos un proyecto personalizado que optimiza la producción de energía.</p>
+                    <h3>Diseño Personalizado</h3>
+                    <p>Creamos un proyecto que optimiza la producción de energía solar y la integración con tu vivienda.</p>
                 </div>
                 <div class="process-step">
                     <div class="step-number">3</div>
-                    <h3>Instalación</h3>
-                    <p>Nuestro equipo instala los Tejados solares con precisión y cuidado.</p>
+                    <h3>Instalación Integral</h3>
+                    <p>Nuestro equipo instala el tejado solar, inversores y sistema de monitorización con precisión.</p>
                 </div>
                 <div class="process-step">
                     <div class="step-number">4</div>
-                    <h3>Activación</h3>
-                    <p>Conectamos el sistema y te enseñamos a monitorizar tu producción.</p>
+                    <h3>Activación y Formación</h3>
+                    <p>Conectamos el sistema y te enseñamos a monitorizar tu producción y consumo energético.</p>
                 </div>
             </div>
         </div>
@@ -1147,7 +1305,7 @@
                 </div>
                 <div class="contact-form">
                     <form action="https://formsubmit.co/kgnete@gmail.com" method="POST">
-                        <input type="hidden" name="_subject" value="Nueva solicitud de estudio solar - SolarFlor">
+                        <input type="hidden" name="_subject" value="Nueva solicitud de estudio solar - Tejado.Solar">
                         <input type="hidden" name="_captcha" value="false">
                         <input type="hidden" name="_template" value="table">
 
@@ -1177,9 +1335,20 @@
                             </select>
                         </div>
                         <div class="form-group">
+                            <label for="interest">Me interesa especialmente</label>
+                            <select id="interest" name="interest" class="form-control">
+                                <option value="" selected>Selecciona tu interés principal</option>
+                                <option value="tejado-solar">Tejado Solar Integrado</option>
+                                <option value="fotovoltaica">Energía Fotovoltaica</option>
+                                <option value="coche-electrico">Cargador Coche Eléctrico</option>
+                                <option value="baterias">Baterías Almacenamiento</option>
+                                <option value="sistema-completo">Sistema Completo</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
                             <label for="message">Mensaje</label>
                             <textarea id="message" name="message" class="form-control" rows="4"
-                                placeholder="Cuéntanos sobre tu proyecto" required></textarea>
+                                placeholder="Cuéntanos sobre tu proyecto de energía renovable" required></textarea>
                         </div>
                         <button type="submit" class="btn-submit">Solicitar Estudio Gratuito</button>
                     </form>
@@ -1194,8 +1363,7 @@
             <div class="footer-content">
                 <div class="footer-column">
                     <h3>Tejado.Solar</h3>
-                    <p>Especialistas en la instalación de Tejados solares integradas para viviendas y negocios.
-                        Transformamos tu tejado en una fuente de energía limpia y eficiente.</p>
+                    <p>Especialistas en la instalación de tejados solares integrados, sistemas fotovoltaicos, cargadores para coches eléctricos y baterías de almacenamiento para viviendas y negocios.</p>
                     <div class="social-links">
                         <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
@@ -1207,7 +1375,7 @@
                     <h3>Enlaces Rápidos</h3>
                     <ul class="footer-links">
                         <li><a href="#inicio">Inicio</a></li>
-                        <li><a href="#productos">Productos</a></li>
+                        <li><a href="#productos">Sistemas Solares</a></li>
                         <li><a href="#beneficios">Beneficios</a></li>
                         <li><a href="#proceso">Nuestro Proceso</a></li>
                         <li><a href="#contacto">Contacto</a></li>
@@ -1216,11 +1384,11 @@
                 <div class="footer-column">
                     <h3>Servicios</h3>
                     <ul class="footer-links">
-                        <li><a href="#">Instalación Residencial</a></li>
-                        <li><a href="#">Instalación Comercial</a></li>
-                        <li><a href="#">Mantenimiento</a></li>
-                        <li><a href="#">Asesoría Energética</a></li>
-                        <li><a href="#">Financiación</a></li>
+                        <li><a href="#">Tejado Solar Residencial</a></li>
+                        <li><a href="#">Tejado Solar Comercial</a></li>
+                        <li><a href="#">Cargadores Coches Eléctricos</a></li>
+                        <li><a href="#">Baterías Almacenamiento</a></li>
+                        <li><a href="#">Mantenimiento Sistemas</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -1234,13 +1402,13 @@
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2023 Tejado.Solar. Todos los derechos reservados.</p>
+                <p>&copy; 2023 Tejado.Solar - Especialistas en Tejados Solares, Energía Fotovoltaica y Carga para Coches Eléctricos. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
 
     <!-- NEW: WhatsApp Button -->
-    <a href="https://wa.me/34600366211?text=Hola,%20me%20interesan%20las%20Tejados%20solares%20de%20Tejado.Solar" class="whatsapp-button" target="_blank">
+    <a href="https://wa.me/600366211?text=Hola,%20me%20interesa%20el%20tejado%20solar%20de%20Tejado.Solar" class="whatsapp-button" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
@@ -1263,7 +1431,7 @@
         <div class="modal-content">
             <span class="close-modal" id="close-modal">&times;</span>
             <h3>Descarga Nuestro Folleto</h3>
-            <p>Introduce tus datos para descargar nuestro folleto informativo completo sobre Tejados solares.</p>
+            <p>Introduce tus datos para descargar nuestro folleto informativo completo sobre tejados solares y energías renovables.</p>
             <form id="brochure-form">
                 <div class="form-group">
                     <label for="brochure-name">Nombre completo</label>
